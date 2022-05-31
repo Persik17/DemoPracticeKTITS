@@ -1,0 +1,42 @@
+﻿<Page x:Class="ParfumeryProj.Pages.AddEditPages.AddEditOrderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ParfumeryProj.Pages.AddEditPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="AddEditOrderPage">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <TextBlock Text="Статус:"/>
+                <ComboBox x:Name="TypeOrderCb" Width="150" SelectedItem="{Binding OrderType}" DisplayMemberPath="Name"/>
+                <TextBlock Text="Менеджер:"/>
+                <TextBlock Text="{Binding Order.Surname}"/>
+                <TextBlock Text="Клиент:"/>
+                <TextBlock Text="{Binding Order1.Surname}"/>
+            </StackPanel>
+            <StackPanel Margin="10" Height="330">
+                <TextBlock Text="Корзина:"/>
+                <DataGrid Width="250" Height="250" x:Name="BasketGrid" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserSortColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Имя" Binding="{Binding Product.Title}"/>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Product.MinCost, StringFormat={}{0:0 Рублей}}"/>
+                        <DataGridTextColumn/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="AddProdBtn" Content="Добавить" Click="AddProdBtn_Click" Margin="5"/>
+                    <Button x:Name="DeleteProdBtn" Content="Удалить" Click="DeleteProdBtn_Click" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="SaveBtn" Content="Сохранить" Click="SaveBtn_Click" Margin="5"/>
+            <Button x:Name="DeleteBtn" Content="Удалить" Click="DeleteBtn_Click" Margin="5"/>
+            <Button x:Name="BackBtn" Content="Назад" Click="BackBtn_Click" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

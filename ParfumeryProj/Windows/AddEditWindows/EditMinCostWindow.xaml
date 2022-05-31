@@ -1,0 +1,22 @@
+﻿<Window x:Class="ParfumeryProj.Windows.AddEditWindows.EditMinCostWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParfumeryProj.Windows.AddEditWindows"
+        mc:Ignorable="d"
+        Height="250" WindowStyle="None" WindowStartupLocation="CenterScreen"  Width="400">
+
+    <Border BorderBrush="Black" BorderThickness="2">
+        <StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Height="180">
+                <TextBlock VerticalAlignment="Center" Text="Изменить цену на..."/>
+                <TextBox x:Name="MaxCostTb" PreviewTextInput="MaxCostTb_PreviewTextInput" VerticalAlignment="Center" Width="150"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="Сохранить" Margin="5"/>
+                <Button x:Name="CloseBtn" Click="CloseBtn_Click" Content="Закрыть" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

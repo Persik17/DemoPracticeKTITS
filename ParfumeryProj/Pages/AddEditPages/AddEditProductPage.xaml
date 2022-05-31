@@ -1,0 +1,34 @@
+﻿<Page x:Class="ParfumeryProj.Pages.AddEditPages.AddEditProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ParfumeryProj.Pages.AddEditPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="AddEditProductPage">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10" Width="150">
+                <TextBlock Text="Название"/>
+                <TextBox x:Name="TitleTb" Text="{Binding Title}"/>
+                <TextBlock Text="Артикул"/>
+                <TextBox x:Name="ArticleTb" MaxLength="8" PreviewTextInput="ArticleTb_PreviewTextInput" Text="{Binding Article}"/>
+                <TextBlock Text="Мин. цена"/>
+                <TextBox x:Name="MinCostTb" PreviewTextInput="MinCostTb_PreviewTextInput" Text="{Binding MinCost}"/>
+                <TextBlock Text="Тип продукта"/>
+                <ComboBox x:Name="ProdTypeCb" SelectedItem="{Binding ProductType}" DisplayMemberPath="Name"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <Image x:Name="ProdImage" Source="{Binding Photo}" Width="100" Height="100"/>
+                <Button x:Name="ChangeImageBtn" Click="ChangeImageBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button x:Name="SaveBtn" Click="SaveBtn_Click" Content="Сохранить" Margin="5"/>
+            <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" Content="Удалить" Margin="5"/>
+            <Button x:Name="BackBtn" Click="BackBtn_Click" Content="Назад" Margin="5"/>
+        </StackPanel>
+    </StackPanel>
+</Page>
